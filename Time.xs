@@ -35,6 +35,7 @@ clock_gettime(clk_id)
   clockid_t clk_id = SvIV(ST(0));
   struct timespec ts;
   clock_gettime(clk_id, &ts);
+  # TODO check_errono
 
   AV* av = (AV*)sv_2mortal((SV*)newAV());
 
@@ -65,3 +66,4 @@ clock_settime(clk_id)
   XPUSHs(sv);
   XSRETURN(1);
 }
+
