@@ -36,3 +36,4 @@ inc/
 
 # ExtUtils::ParseXS
 *.c
+*.xsc
