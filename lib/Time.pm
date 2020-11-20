@@ -4,26 +4,35 @@ use 5.024003;
 use strict;
 use warnings;
 
+use constant {
+    CLOCK_REALTIME => 0,
+    CLOCK_MONOTONIC_RAW => 4,
+    CLOCK_MONOTONIC_RAW_APPROX => 5,
+    CLOCK_MONOTONIC => 6,
+    CLOCK_UPTIME_RAW => 8,
+    CLOCK_UPTIME_RAW_APPROX => 9,
+    CLOCK_THREAD_CPUTIME_ID => 16,
+    CLOCK_PROCESS_CPUTIME_ID => 12,
+};
+
 require Exporter;
 
 our @ISA = qw(Exporter);
 
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-
-# This allows declaration	use Time ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
-our %EXPORT_TAGS = ( 'all' => [ qw(
-	
-) ] );
+our %EXPORT_TAGS = (
+    'all' =>
+    [ qw(
+            CLOCK_REALTIME
+            CLOCK_MONOTONIC_RAW
+            CLOCK_MONOTONIC_RAW_APPROX
+            CLOCK_MONOTONIC
+            CLOCK_UPTIME_RAW
+            CLOCK_UPTIME_RAW_APPROX
+            CLOCK_THREAD_CPUTIME_ID
+            CLOCK_PROCESS_CPUTIME_ID
+    ) ] );
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-
-our @EXPORT = qw(
-	
-);
 
 our $VERSION = '0.01';
 

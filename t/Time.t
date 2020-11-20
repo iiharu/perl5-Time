@@ -3,16 +3,24 @@
 
 #########################
 
-# change 'tests => 1' to 'tests => last_test_to_print';
-
 use strict;
 use warnings;
 
-use Test::More tests => 1;
-BEGIN { use_ok('Time') };
+use Test::More;
+BEGIN { use_ok('Time', ':all') };
 
 #########################
 
 # Insert your test code below, the Test::More module is use()ed here so read
 # its man page ( perldoc Test::More ) for help writing this test script.
 
+is CLOCK_REALTIME, 0;
+is CLOCK_MONOTONIC_RAW, 4;
+is CLOCK_MONOTONIC_RAW_APPROX, 5;
+is CLOCK_MONOTONIC, 6;
+is CLOCK_UPTIME_RAW, 8;
+is CLOCK_UPTIME_RAW_APPROX, 9;
+is CLOCK_THREAD_CPUTIME_ID, 16;
+is CLOCK_PROCESS_CPUTIME_ID, 12;
+
+done_testing;
